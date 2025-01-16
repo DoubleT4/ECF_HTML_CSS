@@ -1,8 +1,8 @@
 @use 'bases';
 
 * {
-    padding: 0%;
-    margin: 0%;
+    padding: 0px;
+    margin: 0px;
     text-decoration: none;
 }
 
@@ -30,6 +30,9 @@
     .logo{
         height: 50px;
     }
+    .icon_nav{
+        display: none;
+    }
     .links{
         @include flex($content: space-around);
         width: 750px;
@@ -45,5 +48,134 @@
         font-weight: semibold;
         font-family: bases.$primary_font;
         background: linear-gradient(to bottom left, bases.$primary_clr, bases.$secondary_clr);
+    }
+}
+
+.header{
+    @include flex();
+    margin-top: 70px;
+    width: 100%;
+    .text_header{
+        @include flex($dir: column, $content: flex-start, $items: flex-start);
+        gap: 50px;
+        width: 500px;
+        .title{
+            font-family: bases.$primary_font;
+            font-size: 26px;
+            h1{
+                font-weight: lighter;
+            }
+            span{
+                font-weight: bold;
+            }
+            .clr_header{
+                color: bases.$quaternary_clr;
+            }
+        }
+        .img_header_responsive{
+            display: none;
+        }
+        .subtitle{
+            font-size: 18px;
+            font-family: bases.$primary_font;
+            color: bases.$tertiary_clr;
+        }
+        .btn_header{
+            @include btn_design($w: 175px, $h: 50px,$bg: bases.$quinary_clr);
+            @include flex();
+            font-size: 14px;
+            font-family: bases.$primary_font;
+            box-shadow: 0px 4px 49px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .navbar{
+        padding: 0px 25px;
+        .logo{
+            height: 30px;
+        }
+        .links{
+            width: 500px;
+            font-size: 14px;
+        }
+        .btn_nav{
+            @include btn_design($h: 35px, $w: 100px);
+            font-size: 12px;
+        }
+    }
+
+    .header{
+        @include flex($content: flex-start, $items: flex-start);
+        margin-top: 50px;
+        padding-left: 25px;
+        .text_header{
+            gap: 50px;
+            width: 340px;
+            .title{
+                font-size: 18px;
+            }
+            .subtitle{
+                font-size: 14px;
+            }
+            .btn_header{
+                @include btn_design($w: 125px, $h: 40px, $bg: bases.$quinary_clr);
+                font-size: 12px;
+            }
+        }
+        .img_header{
+            scale: 0.3;
+            width: 250px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+    .navbar{
+        @include flex($content: space-around);
+        .logo{
+            height: 50px;
+        }
+        .icon_nav{
+            display: flex;
+            height: 50px;
+        }
+        .links{
+            display:none;
+        }
+        .btn_nav{
+            display: none;
+        }
+    }
+
+    .header{
+        @include flex($dir: column,);
+        width: 400px;
+        .text_header{
+            @include flex($dir:column,$content:center);
+            text-align: center;
+            width: 340px;
+            .title{
+                font-size: 18px;
+            }
+            .img_header_responsive{
+                display:flex;
+                justify-content: center;
+                width: 200px;
+                scale: 0.5;
+            }
+            .subtitle{
+                display: none;
+            }
+            .btn_header{
+                @include btn_design($w: 125px, $h: 40px, $bg: bases.$quinary_clr);
+                font-size: 12px;
+            }
+        }
+        .img_header{
+            display: none;
+        }
     }
 }
