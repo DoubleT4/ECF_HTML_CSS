@@ -1,5 +1,47 @@
 * {
+  padding: 0%;
   margin: 0%;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  height: 80px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+}
+.navbar .logo {
+  height: 50px;
+}
+.navbar .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 750px;
+  color: #4a5568;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+.navbar .btn_nav {
+  width: 130px;
+  height: 45px;
+  background-color: none;
+  color: #fafafa;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: semibold;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(to bottom left, #6675f7, #57007b);
 }
 
 /*# sourceMappingURL=index.css.map */

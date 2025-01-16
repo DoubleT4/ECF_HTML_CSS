@@ -1,4 +1,49 @@
-*{
+@use 'bases';
 
-margin: 0%;
+* {
+    padding: 0%;
+    margin: 0%;
+    text-decoration: none;
+}
+
+@mixin flex( $flex: flex, $dir: row, $items: center, $content: center){
+    display: $flex;
+    flex-direction: $dir;
+    align-items: $items;
+    justify-content: $content;
+}
+
+@mixin btn_design ($w: 100px, $h:30px, $bg: gray, $color: #fff, $border: 5px){
+    width: $w;
+    height: $h;
+    background-color: $bg;
+    color: $color;
+    border-radius: $border;
+    cursor: pointer;
+}
+
+.navbar{
+    @include flex($content: space-between);
+    padding: 0px 50px;
+    height: 80px;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+    .logo{
+        height: 50px;
+    }
+    .links{
+        @include flex($content: space-around);
+        width: 750px;
+        color: bases.$tertiary_clr;
+        font-family: bases.$primary_font;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .btn_nav{
+        @include btn_design($h: 45px, $w: 130px, $border: 5px, $bg: none, $color: #fafafa);
+        @include flex();
+        font-size: 14px;
+        font-weight: semibold;
+        font-family: bases.$primary_font;
+        background: linear-gradient(to bottom left, bases.$primary_clr, bases.$secondary_clr);
+    }
 }
