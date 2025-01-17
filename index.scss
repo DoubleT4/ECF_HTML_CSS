@@ -169,6 +169,54 @@
     }
 }
 
+.section_video{
+    @include flex();
+    height: 600px;
+    margin-top: 50px;
+    .container_2{
+        @include flex($items: flex-start);
+        width: 1300px;
+        gap: 250px;
+        .block_text{
+            @include flex($dir: column, $items:flex-start);
+            width: 350px;
+            gap: 35px;
+            .title_2{
+                font-family: bases.$primary_font;
+                font-size: 28px;
+            }
+            .subtitle_2{
+                font-family: bases.$primary_font;
+                font-size: 20px;
+                color: #718096;
+                span{
+                    background: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$secondary_clr);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    color: transparent;
+                }
+            }
+            .links_info{
+                @include flex();
+                gap: 20px;
+                font-family: bases.$primary_font;
+                font-size: 18px;
+                color : bases.$secondary_clr;
+                .logo_ytb{
+                    display: none;
+                }
+            }
+        }
+        .video{
+            width: 600px;
+            height: 450px;
+            border-radius: 15px;
+            background-image: url(images/Abou-us-Video.png);
+        }
+    }
+}
+
 
 @media screen and (max-width: 820px) {
     .navbar{
@@ -211,6 +259,7 @@
         }
     }
     .section_services{
+        height: 400px;
         padding: 50px 0px;
         .titles_services{
             font-size: 20px;
@@ -242,12 +291,41 @@
             }
         }
         .index_carrousel{
-            margin-right: 300px;
+            @include flex($content: center);
+            margin-right: 0px;
             .index{
+                @include flex($content:center);
                 width: 150px;
             }
             .index_2{
-                width: 150px;
+                display: none;
+            }
+        }
+    }
+    .section_video{
+        height: 400px;
+        margin-top: 25px;
+        .container_2{
+            @include flex();
+            width: 800px;
+            gap: 50px;
+            .block_text{
+                width: 260px;
+                gap: 35px;
+                .title_2{
+                    font-size: 20px;
+                }
+                .subtitle_2{              
+                    font-size: 14px;                  
+                }
+                .links_info{
+                    font-size: 12px;
+                }
+            }
+            .video{
+                width: 400px;
+                height: 300px;
+                background-size: cover;
             }
         }
     }
@@ -335,6 +413,31 @@
                 width: 150px;
             }
             .index_2{
+                display: none;
+            }
+        }
+    }
+    .section_video{
+        height: 400px;
+        margin-top: 25px;
+        .container_2{
+            @include flex();
+            width: 800px;
+            gap: 50px;
+            .block_text{
+                width: 260px;
+                gap: 35px;
+                .title_2{
+                    font-size: 20px;
+                }
+                .subtitle_2{              
+                    font-size: 14px;                  
+                }
+                .links_info{
+                    font-size: 12px;
+                }
+            }
+            .video{
                 display: none;
             }
         }
