@@ -4,6 +4,7 @@
     padding: 0px;
     margin: 0px;
     text-decoration: none;
+    
 }
 
 @mixin flex( $flex: flex, $dir: row, $items: center, $content: center){
@@ -20,6 +21,15 @@
     color: $color;
     border-radius: $border;
     cursor: pointer;
+}
+
+@mixin card_design($h: 250px, $w: 300px, $bg: #FAFAFA, $border: 7px){
+    height: $h;
+    width: $w;
+    background-color: $bg;
+    border-radius: $border;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    font-family: bases.$primary_font;
 }
 
 .navbar{
@@ -69,7 +79,18 @@
                 font-weight: bold;
             }
             .clr_header{
-                color: bases.$quaternary_clr;
+                background: linear-gradient(to bottom, bases.$quaternary_clr, bases.$septenary_clr);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
+            }
+            .clr_header_2{
+                background: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$octonary_clr);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
             }
         }
         .img_header_responsive{
@@ -90,6 +111,65 @@
     }
 }
 
+.section_services{
+    @include flex($dir: column,$content: space-between);
+    padding: 50px 0px;
+    height: 600px;
+    background-color: #f9f9ff;
+    .titles_services{
+        font-family: bases.$primary_font;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .container{
+        @include flex();
+        gap: 40px;
+        .card_services{
+            @include card_design();
+            @include flex($dir: column, $items: flex-start);
+            padding: 10px 10px;
+            gap: 20px;
+            .subtitle_card_responsive{
+                display: none;
+            }
+        }
+        .card_services_v{
+            @include card_design();
+            @include flex($dir: column, $items: flex-start);
+            padding: 10px 10px;
+            margin-top: 50px;
+            gap: 20px;
+            border: solid 1px black;
+            border-image: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$secondary_clr);
+            border-image-slice: 1;
+            .gradient_text{
+                background: linear-gradient(to bottom left, bases.$sextenary_clr, bases.$secondary_clr);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
+            }
+            .subtitle_card_responsive{
+                display: none;
+            }
+        }
+    }
+    .index_carrousel{
+        @include flex($content:flex-end);
+        width: 100%;
+        margin-right: 750px;
+        .index{
+            @include flex($content: flex-start);
+            width: 300px;
+        }
+        .index_2{
+            @include flex($content: flex-end);
+            width: 300px;
+        }
+    }
+}
+
+
 @media screen and (max-width: 820px) {
     .navbar{
         padding: 0px 25px;
@@ -109,7 +189,7 @@
     .header{
         @include flex($content: flex-start, $items: flex-start);
         margin-top: 50px;
-        padding-left: 25px;
+        margin-left: 25px;
         .text_header{
             gap: 50px;
             width: 340px;
@@ -125,12 +205,54 @@
             }
         }
         .img_header{
+            @include flex($content: flex-end);
             scale: 0.3;
             width: 250px;
         }
     }
-
+    .section_services{
+        padding: 50px 0px;
+        .titles_services{
+            font-size: 20px;
+        }
+        .container{
+            gap: 20px;
+            .card_services{
+                @include card_design($w:150px, $h:125px);
+                font-size: 12px;
+                padding: 10px 10px;
+                gap: 10px;
+                .subtitle_card_responsive{
+                    display: block;
+                }
+                .subtitle_card{
+                    display: none;
+                }
+            }
+            .card_services_v{
+                @include card_design($w:150px, $h:125px);
+                font-size: 12px;
+                gap: 10px;
+                .subtitle_card_responsive{
+                    display: block;
+                }
+                .subtitle_card{
+                    display: none;
+                }
+            }
+        }
+        .index_carrousel{
+            margin-right: 300px;
+            .index{
+                width: 150px;
+            }
+            .index_2{
+                width: 150px;
+            }
+        }
+    }
 }
+
 
 @media screen and (max-width: 430px) {
     .navbar{
@@ -176,6 +298,45 @@
         }
         .img_header{
             display: none;
+        }
+    }
+
+    .section_services{
+        @include flex($dir:column, $content: center);
+        height: 300px;
+        padding: 0px;
+        gap: 30px;
+        .titles_services{
+            font-size: 18px;
+        }
+        .container{
+            gap: 20px;
+            .card_services{
+                display: none;
+            }
+            .card_services_v{
+                @include card_design($w:150px, $h:125px);
+                font-size: 12px;
+                margin-top: 0px;
+                gap: 10px;
+                .subtitle_card_responsive{
+                    display: block;
+                }
+                .subtitle_card{
+                    display: none;
+                }
+            }
+        }
+        .index_carrousel{
+            @include flex($content: center);
+            margin-right: 0px;
+            .index{
+                @include flex($content:center);
+                width: 150px;
+            }
+            .index_2{
+                display: none;
+            }
         }
     }
 }
