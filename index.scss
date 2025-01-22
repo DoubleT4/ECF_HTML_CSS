@@ -421,6 +421,90 @@
     }
 }
 
+.section_dev{
+    @include flex($dir: column);
+    background-color: bases.$ninth_clr;
+    padding: 50px 0px;
+    .title_dev{
+        @include flex($dir: column);
+        width: 350px;
+        gap: 25px;
+        text-align: center;
+        font-family: bases.$primary_font;
+        font-size: 28px;
+    }
+    .container_dev{
+        @include flex();
+        gap: 50px;
+        .container_card_dev{
+            @include flex($dir: column);
+            padding-top: 50px;
+            gap: 25px;
+            .card_dev{
+                @include flex($items: flex-start);
+                @include card_design($w: 600px,$h: 200px, $border: 5px, $bg: #ffffff);
+                gap: 25px;
+                box-shadow: none;
+                border: 1px solid #e7daed;
+                img{
+                    margin-top: 50px;
+                }
+                .text_card_dev{
+                    @include flex($dir: column, $items: flex-start);
+                    width: 400px;
+                    gap: 25px;
+                    margin-top: 50px;
+                    font-family: bases.$primary_font;
+                    h3{
+                        font-size: 20px;
+                    }
+                    p{
+                        font-size: 14px;
+                        .clr_text_dev{
+                            font-weight: bold;
+                        }
+                        .clr_text_dev_2{
+                            background: linear-gradient(to bottom left, bases.$primary_dev_clr_linear, bases.$primary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                        .clr_text_dev_3{
+                            background: linear-gradient(to bottom left, bases.$secondary_dev_clr_linear, bases.$secondary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                        .clr_text_dev_4{
+                            background: linear-gradient(to bottom left, bases.$tertiary_dev_clr_linear, bases.$tertiary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                        .clr_text_dev_5{
+                            background: linear-gradient(to bottom left, bases.$quaternary_dev_clr_linear, bases.$quaternary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                        .clr_text_dev_6{
+                            background: linear-gradient(to bottom left, bases.$quinary_dev_clr_linear, bases.$quinary_dev_clr_linear_2);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -moz-background-clip: text;
+                            color: transparent;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
+
 
 @media screen and (max-width: 820px) {
 
@@ -652,6 +736,41 @@
             }
         }
     }
+
+    .section_dev{
+        .title_dev{
+            width: 300px;
+            font-size: 26px;
+        }
+        .container_dev{
+            gap: 25px;
+            .container_card_dev{
+                gap: 10px;
+                .card_dev{
+                    @include flex($items: flex-start);
+                    @include card_design($w: 350px,$h: 200px, $border: 5px, $bg: #ffffff);
+                    gap: 25px;
+                    box-shadow: none;
+                    border: 1px solid #e7daed;
+                    img{
+                        margin-top: 30px;
+                    }
+                    .text_card_dev{
+                        @include flex($dir: column, $items: flex-start);
+                        width: 200px;
+                        gap: 10px;
+                        margin-top: 30px;
+                        h3{
+                            font-size: 16px;
+                        }
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+                }   
+            }
+        }
+    }
 }
 
 
@@ -836,6 +955,26 @@
             .links_studies{  
                 width: 350px; 
                 font-size: 16px;
+            }
+        }
+    }
+
+    .section_dev{
+        .title_dev{
+            width: 300px;
+            font-size: 26px;
+        }
+        .container_dev{
+            @include flex($dir: column);
+            .container_card_dev{
+                gap: 10px;
+                .card_dev{
+                    .text_card_dev{
+                        h3{
+                            font-size: 14px;
+                        }
+                    }
+                }   
             }
         }
     }
