@@ -533,6 +533,70 @@
     }
 }
 
+.section_footer{
+    @include flex($dir: column);
+    padding: 50px 0px;
+    gap: 75px;
+    .container_footer{
+        @include flex();
+        width: 1600px;
+        gap: 150px;
+        font-family: bases.$primary_font;
+        .container_links_footer{
+            @include flex($dir: column);
+            width: 300px;
+            height: 300px;
+            .links_footer{
+                @include flex($dir: column,$content: flex-start,$items: flex-start);
+                gap: 25px;
+                font-size: 18px;
+                color: bases.$tertiary_clr;
+                .logo_footer{
+                    width: 90px;
+                    height: 30px;
+                }
+            }
+        }
+        .links_footer_responsive{
+            @include flex();
+            gap: 150px;
+        }
+        .links_footer_2{
+            @include flex($dir: column,$content: flex-start,$items: flex-start);
+            width: 150px;
+            height: 300px;
+            font-size: 18px;
+            gap: 15px;
+            p{
+                color: bases.$tertiary_clr;
+            }
+        }
+        .links_footer_3{
+            @include flex($dir: column,$content: flex-start,$items: flex-start);
+            gap: 25px;
+            width: 300px;
+            font-size: 18px;
+            height: 300px;
+            p{
+                color: bases.$tertiary_clr;
+            }
+        }
+        .links_footer_4{
+            @include flex($content: flex-start,$items: flex-end);
+            width: 300px;
+            height: 300px;
+            gap: 10px;
+        }
+        .links_footer_responsive_logo{
+            display: none;
+        }
+    }
+    .copyright_footer{
+        font-family: bases.$primary_font;
+        font-size: 12px;
+    }
+}
+
 @media screen and (max-width: 820px) {
 
     .navbar{
@@ -820,6 +884,45 @@
             }
         }
     }
+
+    .section_footer{
+        .container_footer{
+            width: 700px;
+            gap: 50px;
+            .container_links_footer{
+                @include flex($dir: column);
+                width: 200px;
+                .links_footer{
+                    gap: 25px;
+                    font-size: 16px;
+                    .logo_footer{
+                        width: 90px;
+                        height: 30px;
+                    }
+                }
+            }
+            .links_footer_responsive{
+                @include flex();
+                gap: 0px;
+            }
+            .links_footer_2{
+                width: 150px;
+                font-size: 16px;
+            }
+            .links_footer_3{
+                width: 200px;
+                font-size: 16px;
+            }
+            .links_footer_4{
+                @include flex($items: flex-end);
+                width: 0px;
+                gap: 10px;
+            }
+        }
+        .copyright_footer{
+            font-size: 10px;
+        }
+    }
 }
 
 
@@ -1044,6 +1147,42 @@
                     @include btn_design($h: 50px, $w: 200px, $bg: none);
                     font-size: 14px;
                 }
+            }
+        }
+    }
+
+    .section_footer{
+        .container_footer{
+            @include flex($dir: column);
+            width: 350px;
+            gap: 25px;
+            .container_links_footer{
+                .links_footer{
+                    @include flex($dir: column);
+                    text-align: center;
+                    .logo_footer{
+                        width: 180px;
+                        height: 60px;
+                    }
+                }
+            }
+            .links_footer_responsive{
+                @include flex();
+                gap: 50px;
+                .links_footer_2{
+                    font-size: 16px;
+                }
+                .links_footer_3{
+                    width: 150px;
+                    font-size: 16px;
+                }
+            }
+            .links_footer_4{
+                display: none;
+            }
+            .links_footer_responsive_logo{
+                @include flex();
+                gap: 25px;
             }
         }
     }
